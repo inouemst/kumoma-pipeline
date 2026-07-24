@@ -1,0 +1,13 @@
+# 展開作業で出た重複データ(整理済み・本体は既にルートにコピー済み)
+_archive_extracted/
+files.zip
+プロトタイプfiles.zip
+GithubPush用files/
+
+# OS/エディタ
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
