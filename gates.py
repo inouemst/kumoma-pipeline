@@ -359,7 +359,10 @@ if __name__ == "__main__":
     # --- 検証1：たけくらべに偽の「吉原」を入れた案内文が、第三層に確実に弾かれるか ---
     # 【第2便】自己申告を一切渡さずに検証する（declared_nounsは無視される仕様）。
     fake_takekurabe = "吉原にほど近い町で育つ子供たち。勝気な美登利と、龍華寺の息子・信如。移りゆく季節の祭りの中、二人の間柄も少しずつ形を変えていく。"
-    fulltext = json.load(open("fulltext_100.json", encoding="utf-8"))["389"]
+    # 【較正週(2026-07-25)の発見】ゲート照合の正解データは全文版を使う。
+    # 4,000字版(生成入力用)だと境界直後に初出する正当な固有名詞(美登利は4,031字目)
+    # まで誤って「本文に不在」と判定してしまうため。
+    fulltext = json.load(open("fulltext_100_full.json", encoding="utf-8"))["389"]
     r = check_proper_nouns_exist(fake_takekurabe, fulltext)
     print("=== 検証1：偽『吉原』ケース（自己申告なし・機械抽出のみ） ===")
     print(json.dumps(r, ensure_ascii=False, indent=1))
