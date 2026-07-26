@@ -230,6 +230,13 @@ function body(w){
 }
 
 let pool=[];
+function shuffle(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
 function pick(){
   const p=pool.length?pool:D;
   const w=p[Math.floor(Math.random()*p.length)];
@@ -237,8 +244,12 @@ function pick(){
   s.innerHTML=body(w);
   s.classList.remove("fade");void s.offsetWidth;s.classList.add("fade");
 }
+// 絞り込み条件が変わった時だけ呼ぶ。一覧の並び順をここでシャッフルし直す
+// (「さらに読む」で続きを見る時は呼ばない。呼ぶと既に見せた分が入れ替わってしまうため)
+function refilter(){
+  pool=shuffle(D.filter(match));
+}
 function render(){
-  pool=D.filter(match);
   const n=pool.length;
   document.getElementById("count").innerHTML=
     n?`この条件に <b>${n.toLocaleString()}</b> 篇`:"";
@@ -258,29 +269,29 @@ chips(document.getElementById("timeRow"),TIMES,(i,b,el)=>{
   const was=b.getAttribute("aria-pressed")==="true";
   el.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));
   if(!was){b.setAttribute("aria-pressed","true");F.time=TIMES[i][1]}else{F.time=null}
-  shown=40;render()});
+  shown=40;refilter();render()});
 chips(document.getElementById("easeRow"),EASES,(i,b)=>{
   const k=EASES[i][1],was=b.getAttribute("aria-pressed")==="true";
   b.setAttribute("aria-pressed",String(!was));
   was?F.ease.delete(k):F.ease.add(k);
-  shown=40;render()});
+  shown=40;refilter();render()});
 chips(document.getElementById("formRow"),FORMS.map(f=>[f]),(i,b,el)=>{
   const was=b.getAttribute("aria-pressed")==="true";
   el.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));
   if(!was){b.setAttribute("aria-pressed","true");F.form=i}else{F.form=null}
-  shown=40;render()});
+  shown=40;refilter();render()});
 chips(document.getElementById("moodRow"),MOODS.map(m=>[m]),(i,b)=>{
   const k=MOODS[i],was=b.getAttribute("aria-pressed")==="true";
   b.setAttribute("aria-pressed",String(!was));
   was?F.mood.delete(k):F.mood.add(k);
-  shown=40;render()});
+  shown=40;refilter();render()});
 document.getElementById("more").onclick=()=>{shown+=40;render()};
 document.getElementById("reroll").onclick=pick;
 
 const kg=D.filter(w=>!w[5]&&bucket(w[3])<=1).length;
 document.getElementById("stat").textContent=
   `収録 ${D.length.toLocaleString()}篇。うち15分以内で読める口語の作品は ${kg.toLocaleString()}篇。`;
-render();pick();
+refilter();render();pick();
 </script>
 </body>
 </html>
