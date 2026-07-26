@@ -11,3 +11,6 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+
+# 青空文庫本文クローン(sparse-checkout、容量が大きいため追跡しない)
+aozora_src/
