@@ -34,6 +34,23 @@ for rank, title, author, wid in ranking:
     if len(next_batch) >= 97:
         break
 
+n_from_ranking = len(next_batch)
+print("ランキングから確保:", n_from_ranking, "件")
+
+# ランキング上位(複数年)がほぼ使い尽くされた場合のフォールバック:
+# 作品ID昇順で埋める(人気順ではなくなるが、「育つ庭」モデルでは
+# いずれ全件処理するため、順序の重要性は低下している)。
+if len(next_batch) < 97:
+    remaining_pool = sorted(
+        (wid for wid in works if wid not in done_ids and wid not in under200 and wid not in seen),
+        key=lambda x: int(x),
+    )
+    for wid in remaining_pool:
+        next_batch.append(wid)
+        if len(next_batch) >= 97:
+            break
+    print(f"ランキング切れのためID昇順で補充: {len(next_batch) - n_from_ranking}件追加")
+
 print("次バッチ:", len(next_batch), "件")
 json.dump(next_batch, open("next_batch_ids.json", "w", encoding="utf-8"), ensure_ascii=False)
 print("next_batch_ids.json に保存(上書き)")
