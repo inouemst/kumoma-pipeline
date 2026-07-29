@@ -1,0 +1,972 @@
+{
+ "35": {
+  "作品ID": "35",
+  "作品名": "英雄の器",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 1670,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\35_15166.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "36": {
+  "作品ID": "36",
+  "作品名": "玄鶴山房",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 12609,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\36_14975.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "37": {
+  "作品ID": "37",
+  "作品名": "戯作三昧",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 20634,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\37_14479.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "39": {
+  "作品ID": "39",
+  "作品名": "疑惑",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 12468,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\39_15184.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "41": {
+  "作品ID": "41",
+  "作品名": "母",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 8922,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\41_15229.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "44": {
+  "作品ID": "44",
+  "作品名": "春の心臓",
+  "著者ID": "1085",
+  "文字遣い": "新字旧仮名",
+  "文字数": 4741,
+  "本文ファイルパス": "aozora_src\\cards\\001085\\files\\44_15231.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "45": {
+  "作品ID": "45",
+  "作品名": "春",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 9758,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\45_15230.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "46": {
+  "作品ID": "46",
+  "作品名": "春の夜",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 2601,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\46_15233.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "47": {
+  "作品ID": "47",
+  "作品名": "雛",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 11494,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\47_15276.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "48": {
+  "作品ID": "48",
+  "作品名": "本所両国",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 21590,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\48_15266.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "50": {
+  "作品ID": "50",
+  "作品名": "報恩記",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 15004,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\50_15246.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "51": {
+  "作品ID": "51",
+  "作品名": "文放古",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4150,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\51_15242.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "52": {
+  "作品ID": "52",
+  "作品名": "不思議な島",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 6551,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\52_15239.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "53": {
+  "作品ID": "53",
+  "作品名": "冬",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 5855,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\53_15243.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "54": {
+  "作品ID": "54",
+  "作品名": "ひょっとこ",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 5935,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\54_15238.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "56": {
+  "作品ID": "56",
+  "作品名": "犬と笛",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 8013,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\56_15161.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "57": {
+  "作品ID": "57",
+  "作品名": "一夕話",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 6074,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\57_15160.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "58": {
+  "作品ID": "58",
+  "作品名": "糸女覚え書",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 6831,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\58_14823.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "59": {
+  "作品ID": "59",
+  "作品名": "邪宗門",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 40892,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\59_14480.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "61": {
+  "作品ID": "61",
+  "作品名": "地獄変",
+  "著者ID": "879",
+  "文字遣い": "旧字旧仮名",
+  "文字数": 26676,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\61_15130.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "62": {
+  "作品ID": "62",
+  "作品名": "十円札",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 8818,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\62_15198.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "63": {
+  "作品ID": "63",
+  "作品名": "じゅりあの・吉助",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 2044,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\63_15200.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "64": {
+  "作品ID": "64",
+  "作品名": "影",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 10688,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\64_15175.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "65": {
+  "作品ID": "65",
+  "作品名": "貝殻",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 5096,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\65_14907.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "66": {
+  "作品ID": "66",
+  "作品名": "開化の殺人",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 8480,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\66_14906.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "67": {
+  "作品ID": "67",
+  "作品名": "開化の良人",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 16489,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\67_15174.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "70": {
+  "作品ID": "70",
+  "作品名": "彼",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 5197,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\70_15179.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "71": {
+  "作品ID": "71",
+  "作品名": "彼 第二",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 5730,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\71_15180.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "73": {
+  "作品ID": "73",
+  "作品名": "或敵打の話",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 9406,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\73_15158.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "74": {
+  "作品ID": "74",
+  "作品名": "片恋",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4592,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\74_15176.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "75": {
+  "作品ID": "75",
+  "作品名": "袈裟と盛遠",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 7645,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\75_15187.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "76": {
+  "作品ID": "76",
+  "作品名": "奇遇",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 6465,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\76_15182.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "77": {
+  "作品ID": "77",
+  "作品名": "奇怪な再会",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 21757,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\77_15181.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "78": {
+  "作品ID": "78",
+  "作品名": "金将軍",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 2766,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\78_15185.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "79": {
+  "作品ID": "79",
+  "作品名": "きりしとほろ上人伝",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 12474,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\79_14954.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "80": {
+  "作品ID": "80",
+  "作品名": "煙管",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 6715,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\80_15183.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "81": {
+  "作品ID": "81",
+  "作品名": "木曽義仲論",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 33700,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\81_14934.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "82": {
+  "作品ID": "82",
+  "作品名": "古千屋",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 3008,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\82_15191.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "83": {
+  "作品ID": "83",
+  "作品名": "孤独地獄",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 2658,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\83_15058.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "84": {
+  "作品ID": "84",
+  "作品名": "子供の病気　一游亭に",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 5696,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\84_15192.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "85": {
+  "作品ID": "85",
+  "作品名": "黒衣聖母",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4433,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\85_15190.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "86": {
+  "作品ID": "86",
+  "作品名": "二人小町",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 6504,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\86_15241.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "87": {
+  "作品ID": "87",
+  "作品名": "湖南の扇",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 9317,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\87_15106.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "88": {
+  "作品ID": "88",
+  "作品名": "黄粱夢",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 1020,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\88_15189.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "89": {
+  "作品ID": "89",
+  "作品名": "校正後に",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 1775,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\89_15188.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "90": {
+  "作品ID": "90",
+  "作品名": "好色",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 11141,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\90_14976.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "93": {
+  "作品ID": "93",
+  "作品名": "「鏡花全集」目録開口",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 1215,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\93_14953.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "94": {
+  "作品ID": "94",
+  "作品名": "LOS CAPRICHOS",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 5021,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\94_15098.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "96": {
+  "作品ID": "96",
+  "作品名": "松江印象記",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 3169,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\96_15248.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "97": {
+  "作品ID": "97",
+  "作品名": "Mensura Zoili",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4190,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\97_15251.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "99": {
+  "作品ID": "99",
+  "作品名": "水の三日",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 5135,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\99_15249.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "101": {
+  "作品ID": "101",
+  "作品名": "毛利先生",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 12546,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\101_15252.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "102": {
+  "作品ID": "102",
+  "作品名": "貉",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 2333,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\102_14482.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "103": {
+  "作品ID": "103",
+  "作品名": "妙な話",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4873,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\103_15250.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "104": {
+  "作品ID": "104",
+  "作品名": "長崎小品",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 2707,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\104_15099.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "106": {
+  "作品ID": "106",
+  "作品名": "葱",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 8247,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\106_15226.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "107": {
+  "作品ID": "107",
+  "作品名": "年末の一日",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 3060,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\107_15150.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "108": {
+  "作品ID": "108",
+  "作品名": "鼠小僧次郎吉",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 12645,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\108_15149.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "109": {
+  "作品ID": "109",
+  "作品名": "尼提",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 2214,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\109_15222.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "110": {
+  "作品ID": "110",
+  "作品名": "日光小品",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4222,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\110_15223.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "111": {
+  "作品ID": "111",
+  "作品名": "庭",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 5510,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\111_15148.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "112": {
+  "作品ID": "112",
+  "作品名": "野呂松人形",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 3239,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\112_15227.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "113": {
+  "作品ID": "113",
+  "作品名": "沼地",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 1909,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\113_15225.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "114": {
+  "作品ID": "114",
+  "作品名": "女体",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 1118,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\114_15224.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "115": {
+  "作品ID": "115",
+  "作品名": "尾形了斎覚え書",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 3721,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\115_14856.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "117": {
+  "作品ID": "117",
+  "作品名": "往生絵巻",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 3135,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\117_14836.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "118": {
+  "作品ID": "118",
+  "作品名": "老いたる素戔嗚尊",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 12163,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\118_14835.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "119": {
+  "作品ID": "119",
+  "作品名": "お時儀",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4112,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\119_15169.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "120": {
+  "作品ID": "120",
+  "作品名": "女",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 1990,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\120_15173.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "121": {
+  "作品ID": "121",
+  "作品名": "温泉だより",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 6176,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\121_15172.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "122": {
+  "作品ID": "122",
+  "作品名": "或日の大石内蔵助",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 8993,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\122_15159.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "123": {
+  "作品ID": "123",
+  "作品名": "大川の水",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4122,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\123_15167.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "124": {
+  "作品ID": "124",
+  "作品名": "お律と子等と",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 26356,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\124_15171.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "125": {
+  "作品ID": "125",
+  "作品名": "おしの",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4231,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\125_15170.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "126": {
+  "作品ID": "126",
+  "作品名": "お富の貞操",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 8585,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\126_14861.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "129": {
+  "作品ID": "129",
+  "作品名": "或恋愛小説",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4887,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\129_15155.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "130": {
+  "作品ID": "130",
+  "作品名": "六の宮の姫君",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 6088,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\130_15275.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "131": {
+  "作品ID": "131",
+  "作品名": "老年",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 3645,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\131_15263.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "132": {
+  "作品ID": "132",
+  "作品名": "路上",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 44984,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\132_15264.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "133": {
+  "作品ID": "133",
+  "作品名": "るしへる",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4352,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\133_14546.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "134": {
+  "作品ID": "134",
+  "作品名": "竜",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 9472,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\134_15262.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "135": {
+  "作品ID": "135",
+  "作品名": "道祖問答",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 2306,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\135_15221.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "136": {
+  "作品ID": "136",
+  "作品名": "西郷隆盛",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 11099,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\136_15193.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "137": {
+  "作品ID": "137",
+  "作品名": "寒さ",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4093,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\137_15195.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "138": {
+  "作品ID": "138",
+  "作品名": "三右衛門の罪",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 7297,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\138_15156.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "139": {
+  "作品ID": "139",
+  "作品名": "猿",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 5643,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\139_15128.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "141": {
+  "作品ID": "141",
+  "作品名": "西方の人",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 14816,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\141_15127.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "142": {
+  "作品ID": "142",
+  "作品名": "青年と死",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4178,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\142_15207.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "143": {
+  "作品ID": "143",
+  "作品名": "仙人",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 5443,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\143_15209.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "145": {
+  "作品ID": "145",
+  "作品名": "廿年後之戦争",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 4808,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\145_15147.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "146": {
+  "作品ID": "146",
+  "作品名": "死後",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 3091,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\146_15197.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "147": {
+  "作品ID": "147",
+  "作品名": "蜃気楼",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4829,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\147_15135.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "148": {
+  "作品ID": "148",
+  "作品名": "虱",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 4235,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\148_15134.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "150": {
+  "作品ID": "150",
+  "作品名": "葬儀記",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 4068,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\150_15210.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "151": {
+  "作品ID": "151",
+  "作品名": "漱石山房の秋",
+  "著者ID": "879",
+  "文字遣い": "新字旧仮名",
+  "文字数": 1640,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\151_13451.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "152": {
+  "作品ID": "152",
+  "作品名": "早春",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 3204,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\152_15211.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ },
+ "153": {
+  "作品ID": "153",
+  "作品名": "素戔嗚尊",
+  "著者ID": "879",
+  "文字遣い": "新字新仮名",
+  "文字数": 43908,
+  "本文ファイルパス": "aozora_src\\cards\\000879\\files\\153_15205.html",
+  "n_bad_chars": 0,
+  "credit_format": "standard"
+ }
+}
