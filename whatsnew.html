@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新着文庫 — 雲間</title>
+<style>
+:root{
+  --sumi:#22262E;      /* 墨 */
+  --kumori:#F4F6F8;    /* 曇 — 地 */
+  --kasumi:#DFE4EA;    /* 霞 — 罫 */
+  --usu:#EDF0F4;       /* 淡霞 */
+  --ma:#7C8697;        /* 間 — 副文 */
+  --aozora:#2C6E9B;    /* 青空 — 出口のリンクにのみ使う */
+  --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP","Songti SC",serif;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--kumori);
+  color:var(--sumi);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px 96px}
+
+header{padding:28px 0 8px}
+.mark{font-family:var(--serif);font-size:20px;letter-spacing:.34em;font-weight:400}
+.crumb{font-size:11.5px;margin-top:14px}
+.crumb a{color:var(--ma);text-decoration:none;border-bottom:1px solid var(--kasumi)}
+.crumb a:hover{color:var(--sumi);border-bottom-color:var(--ma)}
+
+h1{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.02em;margin:22px 0 2px}
+.lede{font-size:13.5px;color:var(--ma);line-height:1.9;margin:0 0 28px;max-width:52ch}
+.lede b{color:var(--sumi);font-weight:600}
+
+.day-label{font-size:11.5px;color:var(--ma);letter-spacing:.1em;margin:30px 0 10px;padding-top:2px}
+.day-label:first-of-type{margin-top:0}
+
+.entry{padding:20px 0;border-bottom:1px solid var(--kasumi)}
+.entry .ttl{font-family:var(--serif);font-size:17px;font-weight:400;letter-spacing:.01em}
+.entry .by{font-size:13px;color:var(--ma);margin-top:3px}
+
+.cred{font-size:11.5px;color:var(--ma);line-height:1.9;margin-top:12px;padding-top:11px;border-top:1px dotted var(--kasumi)}
+.cred dl{margin:0}
+.cred dt{display:inline;font-weight:400;opacity:.72}
+.cred dd{display:inline;margin:0 14px 0 5px}
+
+.out{
+  display:inline-block;margin-top:14px;
+  font-size:13.5px;color:var(--aozora);text-decoration:none;
+  border-bottom:1px solid rgba(44,110,155,.32);padding-bottom:1px;
+}
+.out:hover{border-bottom-color:var(--aozora)}
+
+.more{
+  display:block;width:100%;margin-top:28px;padding:14px;
+  background:none;border:1px solid var(--kasumi);border-radius:2px;
+  font-family:var(--sans);font-size:13.5px;color:var(--sumi);cursor:pointer;letter-spacing:.06em;
+}
+.more:hover{background:#fff}
+
+footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--kasumi);font-size:11.5px;color:var(--ma);line-height:1.95}
+footer a{color:var(--aozora);text-decoration:none}
+
+@media(min-width:600px){.wrap{padding:0 28px 96px}.entry .ttl{font-size:18px}}
+:focus-visible{outline:2px solid var(--aozora);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark"><span>雲</span><span>間</span></div>
+  <div class="crumb"><a href="index.html">← 探す</a></div>
+</header>
+
+<h1>新着文庫</h1>
+<p class="lede">ここに並ぶのは、青空文庫のボランティアが<b>つい先ごろ入力・校正を終えたばかりの作品</b>です。雲間はこれらをまだ読んでいません——測定も案内文もなく、そのまま青空文庫へお送りします。</p>
+
+<section id="list"></section>
+<button class="more" id="more" hidden>さらに新着を見る</button>
+
+<footer>
+  掲載情報は<a href="https://www.aozora.gr.jp/index_pages/whatsnew1.html" target="_blank" rel="noopener">青空文庫「新着ファイル」</a>を随時反映しています（最終更新：2026年7月31日分まで）。
+</footer>
+
+</div>
+
+<script>
+// [0]公開日 [1]作品名 [2]著者 [3]図書カードURL [4]入力者 [5]校正者
+const NEWS = [
+["2026-07-31","私生児のこと","柳田 国男","https://www.aozora.gr.jp/cards/001566/card58760.html","フクポー","植松健伍"],
+["2026-07-28","畸形の天女","江戸川 乱歩","https://www.aozora.gr.jp/cards/001779/card58487.html","入江幹夫","山田順子"],
+["2026-07-25","ソ連関係の記事","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61510.html","砂場清隆","木下聡"],
+["2026-07-22","からっぽの箪笥","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60094.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-07-19","コメット・Ｘ","佐藤 春夫","https://www.aozora.gr.jp/cards/001763/card61583.html","持田和踏","noriko saito"],
+["2026-07-15","飛躍にも表と蔭","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60113.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-07-11","人工衛星の発射地","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61455.html","砂場清隆","木下聡"],
+["2026-07-07","しぐれ傘","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60531.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-06-26","水爆の平和利用","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61456.html","砂場清隆","木下聡"],
+["2026-06-22","朝顔草紙","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card57536.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-06-18","或る牛乳工場の思い出","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61432.html","砂場清隆","木下聡"],
+["2026-06-14","道灌山","佐藤 春夫","https://www.aozora.gr.jp/cards/001763/card61584.html","持田和踏","noriko saito"],
+["2026-06-10","戦国会津唄","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card58558.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-06-06","新しい生花","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61427.html","砂場清隆","木下聡"],
+["2026-06-02","金銭について","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60097.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-05-29","離婚とダイヤモンド","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61502.html","砂場清隆","木下聡"],
+["2026-05-25","身代り金之助","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card58563.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-05-22","緑の怪物","ネルヴァル ジェラール・ド","https://www.aozora.gr.jp/cards/002406/card62767.html","高野敦志","高野 敦志"],
+["2026-05-19","大洪水","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61465.html","砂場清隆","木下聡"],
+["2026-05-16","日録","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60111.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-05-12","双手を挙げる","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61489.html","砂場清隆","木下聡"],
+["2026-05-08","かぜのこ","オルファース ジビュレ・フォン","https://www.aozora.gr.jp/cards/001727/card62768.html","大久保ゆう","大久保 ゆう"],
+["2026-05-06","柱時計に噛まれた話","佐藤 春夫","https://www.aozora.gr.jp/cards/001763/card61601.html","持田和踏","noriko saito"],
+["2026-05-01","松の家","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61488.html","砂場清隆","木下聡"],
+["2026-04-28","さるすべり","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card57622.html","特定非営利活動法人はるかぜ","北川松生"],
+["2026-04-25","惜櫟荘","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61459.html","砂場清隆","木下聡"],
+["2026-04-21","それが来る","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60107.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-04-18","山手公園の感触","山本 和久三","https://www.aozora.gr.jp/cards/001858/card57385.html","浦山敦子","栗田美恵子"],
+["2026-04-15","本所霙河岸","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card57726.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-04-11","低温科学と国鉄","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61469.html","砂場清隆","木下聡"],
+["2026-04-09","春宵綺談","佐藤 春夫","https://www.aozora.gr.jp/cards/001763/card61602.html","持田和踏","noriko saito"],
+["2026-04-06","笑われそうな話","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60120.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-04-03","有効な日曜日","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61500.html","砂場清隆","木下聡"],
+["2026-03-31","違う平八郎","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card57671.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-03-27","楽しい手術","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61463.html","砂場清隆","木下聡"],
+["2026-03-23","景気のこちら側","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60100.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-03-19","『鉄砲左平次』序にも一つ","佐藤 春夫","https://www.aozora.gr.jp/cards/001763/card61542.html","持田和踏","noriko saito"],
+["2026-03-15","『竹の家』","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61423.html","砂場清隆","木下聡"],
+["2026-03-11","討九郎馳走","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card57681.html","特定非営利活動法人はるかぜ","北川松生"],
+["2026-03-07","或る一世の話","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61430.html","砂場清隆","木下聡"],
+["2026-03-03","涎","正宗 白鳥","https://www.aozora.gr.jp/cards/001581/card60951.html","特定非営利活動法人はるかぜ","najuful"],
+["2026-03-01","街の尼僧の話","岡本 かの子","https://www.aozora.gr.jp/cards/000076/card58353.html","門田裕志","いとうおちゃ"],
+["2026-02-25","カナリヤと少女","山川 方夫","https://www.aozora.gr.jp/cards/001801/card59863.html","かな　とよみ","toko"],
+["2026-02-23","酒も食べ物も","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60106.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-02-20","歌舞伎舞踊","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61439.html","砂場清隆","木下聡"],
+["2026-02-18","ミス・マシュウの新職業","岡本 かの子","https://www.aozora.gr.jp/cards/000076/card58340.html","門田裕志","いとうおちゃ"],
+["2026-02-14","歔欷く仁王像","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card58557.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-02-10","変ったホテル","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61440.html","砂場清隆","木下聡"],
+["2026-02-07","ブドー酒・哲学・アイスクリーム","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60122.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-02-04","百万長者の花屋","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61484.html","砂場清隆","木下聡"]
+];
+
+const esc = s => (s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let shown = 15;
+
+function dayLabel(dateStr){
+  const [y,m,d] = dateStr.split("-");
+  return `${m}月${d}日`;
+}
+
+function entry(e){
+  return `<article class="entry">
+    <div class="ttl">${esc(e[1])}</div>
+    <div class="by">${esc(e[2])}</div>
+    <div class="cred"><dl><dt>入力</dt><dd>${esc(e[4])}</dd><dt>校正</dt><dd>${esc(e[5])}</dd></dl></div>
+    <a class="out" href="${e[3]}" target="_blank" rel="noopener">青空文庫で読む</a>
+  </article>`;
+}
+
+function render(){
+  const view = NEWS.slice(0, shown);
+  let html = "";
+  let lastDay = null;
+  for(const e of view){
+    if(e[0] !== lastDay){
+      html += `<div class="day-label">${dayLabel(e[0])}</div>`;
+      lastDay = e[0];
+    }
+    html += entry(e);
+  }
+  document.getElementById("list").innerHTML = html;
+  document.getElementById("more").hidden = shown >= NEWS.length;
+}
+document.getElementById("more").onclick = () => { shown += 15; render(); };
+render();
+</script>
+</body>
+</html>

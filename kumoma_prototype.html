@@ -141,6 +141,14 @@ footer a{color:var(--aozora);text-decoration:none}
 }
 #kw::placeholder{color:var(--ma)}
 #kw:focus{outline:2px solid var(--aozora);outline-offset:1px}
+header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.whatsnew-link{
+  font-family:var(--sans);font-size:12.5px;color:var(--ma);
+  text-decoration:none;letter-spacing:.03em;
+  border-bottom:1px solid var(--kasumi);padding-bottom:2px;
+  white-space:nowrap;margin-top:6px;
+}
+.whatsnew-link:hover{color:var(--sumi);border-bottom-color:var(--ma)}
 :focus-visible{outline:2px solid var(--aozora);outline-offset:2px}
 </style>
 </head>
@@ -148,8 +156,11 @@ footer a{color:var(--aozora);text-decoration:none}
 <div class="wrap">
 
 <header>
-  <div class="mark"><span>雲</span><span>間</span></div>
-  <div class="tag">青空文庫への入口</div>
+  <div>
+    <div class="mark"><span>雲</span><span>間</span></div>
+    <div class="tag">青空文庫への入口</div>
+  </div>
+  <a class="whatsnew-link" href="whatsnew.html">新着文庫を見る</a>
 </header>
 
 <!-- 偶然から -->
