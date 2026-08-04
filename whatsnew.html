@@ -27,11 +27,20 @@ body{
 }
 .wrap{max-width:680px;margin:0 auto;padding:0 20px 96px}
 
-header{padding:28px 0 8px}
+header{padding:28px 0 8px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .mark{font-family:var(--serif);font-size:20px;letter-spacing:.34em;font-weight:400}
 .crumb{font-size:11.5px;margin-top:14px}
 .crumb a{color:var(--ma);text-decoration:none;border-bottom:1px solid var(--kasumi)}
 .crumb a:hover{color:var(--sumi);border-bottom-color:var(--ma)}
+.topnav{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:7px}
+.topnav a{
+  font-family:var(--sans);font-size:12.5px;color:var(--ma);
+  text-decoration:none;letter-spacing:.03em;
+  border-bottom:1px solid var(--kasumi);padding-bottom:2px;
+  white-space:nowrap;
+}
+.topnav a:hover{color:var(--sumi);border-bottom-color:var(--ma)}
+.topnav a.here{color:var(--sumi);border-bottom-color:var(--sumi)}
 
 h1{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.02em;margin:22px 0 2px}
 .lede{font-size:13.5px;color:var(--ma);line-height:1.9;margin:0 0 28px;max-width:52ch}
@@ -84,8 +93,15 @@ footer a{color:var(--aozora);text-decoration:none}
 <div class="wrap">
 
 <header>
-  <div class="mark"><span>雲</span><span>間</span></div>
-  <div class="crumb"><a href="index.html">← 探す</a></div>
+  <div>
+    <div class="mark"><span>雲</span><span>間</span></div>
+    <div class="crumb"><a href="index.html">← 探す</a></div>
+  </div>
+  <nav class="topnav">
+    <a href="whatsnew.html" class="here" aria-current="page">新着文庫</a>
+    <a href="about.html">雲間について</a>
+    <a href="otayori.html">お便り</a>
+  </nav>
 </header>
 
 <h1>新着文庫</h1>
