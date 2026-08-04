@@ -66,6 +66,16 @@ h1{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.02em;m
 footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--kasumi);font-size:11.5px;color:var(--ma);line-height:1.95}
 footer a{color:var(--aozora);text-decoration:none}
 
+/* ── ページ間のナビ ── */
+.pagenav{
+  margin-top:52px;padding-top:22px;border-top:1px solid var(--kasumi);
+  display:flex;flex-wrap:wrap;gap:20px;font-size:12.5px;
+}
+.pagenav a{color:var(--ma);text-decoration:none;border-bottom:1px solid transparent}
+.pagenav a:hover{color:var(--sumi);border-bottom-color:var(--kasumi)}
+.pagenav .here{color:var(--sumi)}
+.pagenav+footer{margin-top:22px;padding-top:0;border-top:none}
+
 @media(min-width:600px){.wrap{padding:0 28px 96px}.entry .ttl{font-size:18px}}
 :focus-visible{outline:2px solid var(--aozora);outline-offset:2px}
 </style>
@@ -83,6 +93,13 @@ footer a{color:var(--aozora);text-decoration:none}
 
 <section id="list"></section>
 <button class="more" id="more" hidden>さらに新着を見る</button>
+
+<nav class="pagenav">
+  <a href="index.html">探す</a>
+  <a class="here" aria-current="page">新着文庫</a>
+  <a href="about.html">雲間について</a>
+  <a href="otayori.html">お便り</a>
+</nav>
 
 <footer>
   掲載情報は<a href="https://www.aozora.gr.jp/index_pages/whatsnew1.html" target="_blank" rel="noopener">青空文庫「新着ファイル」</a>を随時反映しています（最終更新：2026年7月31日分まで）。

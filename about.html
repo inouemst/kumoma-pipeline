@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>雲間について — 雲間</title>
+<style>
+:root{
+  --sumi:#22262E;      /* 墨 */
+  --kumori:#F4F6F8;    /* 曇 — 地 */
+  --kasumi:#DFE4EA;    /* 霞 — 罫 */
+  --usu:#EDF0F4;       /* 淡霞 */
+  --ma:#7C8697;        /* 間 — 副文 */
+  --aozora:#2C6E9B;    /* 青空 — 出口のリンクにのみ使う */
+  --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP","Songti SC",serif;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--kumori);
+  color:var(--sumi);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px 96px}
+
+header{padding:28px 0 8px}
+.mark{font-family:var(--serif);font-size:20px;letter-spacing:.34em;font-weight:400}
+.crumb{font-size:11.5px;margin-top:14px}
+.crumb a{color:var(--ma);text-decoration:none;border-bottom:1px solid var(--kasumi)}
+.crumb a:hover{color:var(--sumi);border-bottom-color:var(--ma)}
+
+h1{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.02em;margin:22px 0 2px}
+.lede{font-size:13.5px;color:var(--ma);line-height:1.9;margin:0 0 8px;max-width:52ch}
+.lede b{color:var(--sumi);font-weight:600}
+
+/* ── 節 ── */
+section.blk{margin-top:44px;padding-top:26px;border-top:1px solid var(--kasumi)}
+section.blk:first-of-type{border-top:none;padding-top:0}
+h2{
+  font-family:var(--sans);font-size:12px;font-weight:400;
+  letter-spacing:.14em;color:var(--ma);margin:0 0 16px;
+}
+p{margin:0 0 15px;max-width:56ch;text-align:justify}
+p:last-child{margin-bottom:0}
+.q{font-family:var(--serif);font-size:17px;line-height:2;letter-spacing:.01em;margin:0 0 20px;max-width:52ch}
+
+/* ── しないこと（4つ） ── */
+.vows{margin:0;padding:0;list-style:none}
+.vows li{padding:16px 0;border-bottom:1px solid var(--usu)}
+.vows li:last-child{border-bottom:none}
+.vows .v{font-family:var(--serif);font-size:16px;letter-spacing:.02em}
+.vows .w{font-size:13px;color:var(--ma);line-height:1.85;margin-top:5px;max-width:52ch}
+
+/* ── 参加の手順 ── */
+.steps{margin:4px 0 0;padding:0;list-style:none;counter-reset:s}
+.steps li{
+  position:relative;padding:0 0 18px 30px;counter-increment:s;
+  font-size:14px;line-height:1.85;
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:1px;
+  width:19px;height:19px;border:1px solid var(--kasumi);border-radius:50%;
+  font-size:11px;line-height:17px;text-align:center;color:var(--ma);background:#fff;
+}
+.steps li:last-child{padding-bottom:0}
+.steps .sub{display:block;font-size:12.5px;color:var(--ma);margin-top:3px}
+code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12.5px;background:var(--usu);padding:1px 5px;border-radius:2px;
+}
+
+/* ── 出口のリンク一覧 ── */
+.links{margin:18px 0 0;padding:0;list-style:none}
+.links li{padding:13px 0;border-top:1px dotted var(--kasumi)}
+.links li:first-child{border-top:none}
+.links a{font-size:14px;color:var(--aozora);text-decoration:none;border-bottom:1px solid rgba(44,110,155,.3)}
+.links a:hover{border-bottom-color:var(--aozora)}
+.links .d{display:block;font-size:12.5px;color:var(--ma);margin-top:3px;max-width:50ch}
+
+/* ── 空の枠（あとで足すもの） ── */
+.slot{
+  padding:20px;border:1px dashed var(--kasumi);border-radius:2px;
+  font-size:13px;color:var(--ma);line-height:1.85;
+}
+
+.note{
+  margin-top:20px;padding:16px 18px;background:var(--usu);
+  border-radius:2px;font-size:12.5px;color:var(--ma);line-height:1.9;
+}
+.note b{color:var(--sumi);font-weight:600}
+
+/* ── ページ間のナビ ── */
+.pagenav{
+  margin-top:56px;padding-top:22px;border-top:1px solid var(--kasumi);
+  display:flex;flex-wrap:wrap;gap:20px;font-size:12.5px;
+}
+.pagenav a{color:var(--ma);text-decoration:none;border-bottom:1px solid transparent}
+.pagenav a:hover{color:var(--sumi);border-bottom-color:var(--kasumi)}
+.pagenav .here{color:var(--sumi)}
+
+footer{margin-top:22px;font-size:11.5px;color:var(--ma);line-height:1.95}
+footer a{color:var(--aozora);text-decoration:none}
+
+@media(min-width:600px){.wrap{padding:0 28px 96px}}
+:focus-visible{outline:2px solid var(--aozora);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark"><span>雲</span><span>間</span></div>
+  <div class="crumb"><a href="index.html">← 探す</a></div>
+</header>
+
+<h1>雲間について</h1>
+<p class="lede">雲間は、青空文庫にある作品を探すための入口です。<b>読む場所ではありません。</b>気になる一篇が見つかったら、そのまま青空文庫へお送りします。</p>
+
+<section class="blk" style="margin-top:34px">
+  <h2>雲間がしないこと</h2>
+  <ul class="vows">
+    <li>
+      <div class="v">上書きしない</div>
+      <div class="w">案内文は、本文の代わりではありません。本文には一文字も手を触れていません。要約を読んで済ませてほしいのではなく、本文の前に立ってもらうために書いています。</div>
+    </li>
+    <li>
+      <div class="v">序列をつけない</div>
+      <div class="w">「名作」「傑作」「必読」といった言葉は使いません。人気順に並べることもしません。誰かがまだ読んでいない一篇と、よく知られた一篇を、同じ重さで並べます。</div>
+    </li>
+    <li>
+      <div class="v">寄生しない</div>
+      <div class="w">案内文を書くとき、事典や既存の解説は読みません。参照するのは本文だけです。他人の読みを薄めて配ることを避けるためです。</div>
+    </li>
+    <li>
+      <div class="v">書けないものは、書けないと言う</div>
+      <div class="w">短すぎる文章、要約に馴染まない文章には、案内文をつけていません。もっともらしい嘘を置くより、空欄のほうがましだと考えています。同じ理由で、確かめていないことを確かめたとは書きません。</div>
+    </li>
+  </ul>
+</section>
+
+<section class="blk">
+  <h2>なぜ作ったか</h2>
+  <p class="q">青空文庫には二万近い作品があります。けれど、名前を知っている作家の、題名を知っている数篇より先へ進むのは、案外むずかしい。</p>
+  <p>目次はあります。作家別の一覧もあります。ただ、そこに並んでいるのは題名だけで、どんな話なのかは開いてみるまで分かりません。読む時間が十五分しかない日に、十五分で読み終わる一篇を探す手立ても、あまりありません。</p>
+  <p>雲間は、その手前を引き受けようとしています。文字数から読む時間を見積もり、会話文の多さや旧仮名かどうかを機械で測り、本文の冒頭だけを読んで短い案内文を書く。それだけです。作品そのものは、青空文庫にあります。</p>
+  <p>案内文は少しずつ増やしています。全部そろってから公開するのではなく、育ちかけの庭のまま開けています。案内文がまだない作品も、ある作品と同じ場所に、同じ大きさで並んでいます。</p>
+</section>
+
+<section class="blk">
+  <h2>青空文庫という活動のこと</h2>
+  <p>青空文庫にある本文は、すべて人の手で入力され、人の目で校正されたものです。作業をしているのは無償のボランティアで、青空文庫ではその人たちを<b>耕作員</b>と呼びます。</p>
+  <p>一冊が公開されるまでには、入力する人、点検する人、校正する人、また点検する人と、いくつもの手を渡っていきます。関係者自身が「デジタルだけど家内制手工業」と表現するような仕組みです。当然、時間がかかります。入力が終わったまま校正の担い手を待っている作品は、2017年の時点で三千件ほどあったと報告されています。</p>
+  <p>雲間が案内文の末尾に必ず入力者・校正者のお名前を添えているのは、このためです。名前の見えない仕事のままにしておきたくない、というだけの理由です。</p>
+</section>
+
+<section class="blk">
+  <h2>2039年のこと</h2>
+  <p>2018年12月30日、TPP11に関連する法改正で、著作権の保護期間が作者の死後50年から70年に延びました。この改正は過去にさかのぼらないため、1967年までに亡くなった作家の作品が再び保護下に戻ることはありません。</p>
+  <p>一方で、1968年以降に亡くなった作家の作品が新たに公有(パブリックドメイン)になるのは、2039年まで先送りされました。青空文庫にとっては、新しく収録できる作家が二十年間あらわれないことを意味します。2019年の元日、青空文庫は毎年恒例の「Happy Public Domain Day!」のバナーを「Public Domain Locked」に差し替えました。</p>
+  <p>この二十年をどう受け止めるかは、人によって違うはずです。ただ、新しく公開されるものがない期間が続けば、作業に関わる人の輪が細っていくのではないか——という心配は、当時から繰り返し語られてきました。雲間は、その是非についての答えを持っていません。ここに書いたのは、起きたことだけです。</p>
+</section>
+
+<section class="blk">
+  <h2>関わってみたい人へ</h2>
+  <p>読むだけでなく、作るほうに回ることもできます。特別な資格は要りません。手順はおおむね三つです。</p>
+  <ol class="steps">
+    <li>「収録ファイルの取り扱い規準」「リンク規準」と作業マニュアルに目を通す。
+      <span class="sub">下の「耕作員を志願される皆さんへ」に、読むべきものがまとまっています。</span></li>
+    <li><code>reception@aozora.gr.jp</code> 宛に、件名を「同意します」としてメールを送る。
+      <span class="sub">規準に同意することと、名乗りたいお名前を書き添えます。</span></li>
+    <li>作品を選び、入力受付システムか校正受付システムから申し込む。
+      <span class="sub">入力から始めても、校正から始めてもかまいません。</span></li>
+  </ol>
+  <div class="note">
+    はじめの一歩は、<b>メールを一通送るだけ</b>です。作品選びや手順に迷ったときの相談先も、同じ <code>reception@aozora.gr.jp</code> です。
+  </div>
+
+  <ul class="links">
+    <li>
+      <a href="https://www.aozora.gr.jp/guide/kousakuin.html" target="_blank" rel="noopener">耕作員を志願される皆さんへ</a>
+      <span class="d">参加のしかたが書かれた公式のページ。まずここから。</span>
+    </li>
+    <li>
+      <a href="https://www.aozora.gr.jp/aozora-manual/" target="_blank" rel="noopener">青空文庫作業マニュアル</a>
+      <span class="d">入力・校正の具体的な手引きと、著作権についての方針。</span>
+    </li>
+    <li>
+      <a href="https://www.aozora.gr.jp/guide/techo.html" target="_blank" rel="noopener">耕作員手帳</a>
+      <span class="d">作業に使う道具・チェッカー・マニュアルを集めたリンク集。</span>
+    </li>
+    <li>
+      <a href="https://eunheui.sakura.ne.jp/aozora/koseimachi.html" target="_blank" rel="noopener">校正待ち作品検索</a>
+      <span class="d">校正の担い手を待っている作品を探せます（有志による運営）。</span>
+    </li>
+    <li>
+      <a href="https://www.aozora.gr.jp/guide/aozora_bunko_hayawakari.html" target="_blank" rel="noopener">青空文庫早わかり</a>
+      <span class="d">そもそも青空文庫とは何なのか、を短くまとめたページ。</span>
+    </li>
+    <li>
+      <a href="http://honnomirai.net/" target="_blank" rel="noopener">本の未来基金</a>
+      <span class="d">作業ではなく、寄付というかたちで支える窓口。</span>
+    </li>
+  </ul>
+</section>
+
+<section class="blk">
+  <h2>聴く・読む</h2>
+  <!-- ここに Spotify などのリンクを足します。
+       追加のしかた：下の <div class="slot"> ... </div> を丸ごと消して、
+       代わりに次のかたちで並べてください（何行でも増やせます）。
+
+       <ul class="links">
+         <li>
+           <a href="ここにURL" target="_blank" rel="noopener">回のタイトル</a>
+           <span class="d">ひとこと説明</span>
+         </li>
+       </ul>
+  -->
+  <div class="slot">青空文庫やその周辺について語られた回を、ここに少しずつ並べていく予定です。</div>
+</section>
+
+<nav class="pagenav">
+  <a href="index.html">探す</a>
+  <a href="whatsnew.html">新着文庫</a>
+  <a class="here" aria-current="page">雲間について</a>
+  <a href="otayori.html">お便り</a>
+</nav>
+
+<footer>
+  本文は<a href="https://www.aozora.gr.jp/" target="_blank" rel="noopener">青空文庫</a>にあります。雲間は青空文庫の運営とは別の、個人による試みです。
+</footer>
+
+</div>
+</body>
+</html>

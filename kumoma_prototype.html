@@ -113,6 +113,24 @@ header{padding:28px 0 8px}
 footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--kasumi);font-size:11.5px;color:var(--ma);line-height:1.95}
 footer a{color:var(--aozora);text-decoration:none}
 
+/* ── お便りへの小さな導線（青は青空文庫への出口専用なので使わない） ── */
+.tell{
+  display:inline-block;margin-top:12px;
+  font-size:11.5px;color:var(--ma);text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.tell:hover{color:var(--sumi);border-bottom-color:var(--kasumi)}
+
+/* ── ページ間のナビ ── */
+.pagenav{
+  margin-top:52px;padding-top:22px;border-top:1px solid var(--kasumi);
+  display:flex;flex-wrap:wrap;gap:20px;font-size:12.5px;
+}
+.pagenav a{color:var(--ma);text-decoration:none;border-bottom:1px solid transparent}
+.pagenav a:hover{color:var(--sumi);border-bottom-color:var(--kasumi)}
+.pagenav .here{color:var(--sumi)}
+.pagenav+footer{margin-top:22px;padding-top:0;border-top:none}
+
 @media(min-width:600px){.opening{font-size:22px}.wrap{padding:0 28px 96px}}
 @media(prefers-reduced-motion:no-preference){
   .fade{animation:settle .5s ease-out}
@@ -193,6 +211,13 @@ header{display:flex;align-items:flex-start;justify-content:space-between;gap:16p
 <section id="list"></section>
 <button class="more" id="more" hidden>さらに読む</button>
 
+<nav class="pagenav">
+  <a class="here" aria-current="page">探す</a>
+  <a href="whatsnew.html">新着文庫</a>
+  <a href="about.html">雲間について</a>
+  <a href="otayori.html">お便り</a>
+</nav>
+
 <footer>
   本文は青空文庫にあります。雲間は本文を持たず、読者を青空文庫へ送り返します。<br>
   入力・校正にあたった方のお名前と底本は、各篇に添えています。<br>
@@ -247,6 +272,10 @@ function credits(w){
   if(w[12])h+=`<dt>底本</dt><dd>${esc(w[12])}</dd>`;
   return h+"</dl>";
 }
+// 案内文がある作品にだけ、お便りへの導線を出す（作品IDと題名を持っていく）
+const tell=w=>w[16]
+  ?`<a class="tell" href="otayori.html?w=${encodeURIComponent(w[0])}&amp;t=${encodeURIComponent(w[1])}">この案内文について知らせる</a>`
+  :"";
 function body(w){
   const obi=w[16]?`<div class="obi">${esc(w[16])}</div>`:"";
   return `${obi}<p class="opening${w[9]?" cut":""}">${esc(w[8])}</p>
@@ -255,7 +284,7 @@ function body(w){
   <div class="facts">${facts(w)}</div>
   <a class="out" href="${cardURL(w)}" target="_blank" rel="noopener">図書カード</a>
   <a class="out" href="${bodyURL(w)}" target="_blank" rel="noopener">本文を読む</a>
-  <div class="cred">${credits(w)}</div></div>`;
+  <div class="cred">${credits(w)}</div>${tell(w)}</div>`;
 }
 
 let pool=[];
