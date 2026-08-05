@@ -353,8 +353,9 @@ document.getElementById("more").onclick=()=>{shown+=40;render()};
 document.getElementById("reroll").onclick=pick;
 
 const kg=D.filter(w=>!w[5]&&bucket(w[3])<=1).length;
+const guided=D.filter(w=>w[16]).length;
 document.getElementById("stat").textContent=
-  `収録 ${D.length.toLocaleString()}篇。うち15分以内で読める口語の作品は ${kg.toLocaleString()}篇。`;
+  `収録 ${D.length.toLocaleString()}篇。うち15分以内で読める口語の作品は ${kg.toLocaleString()}篇。案内文つきは ${guided.toLocaleString()}篇。`;
 document.getElementById("kw").addEventListener("input",e=>{
   F.query=e.target.value.trim().toLowerCase();
   shown=40;refilter();render();
