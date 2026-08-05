@@ -129,7 +129,8 @@ footer a{color:var(--aozora);text-decoration:none}
 <script>
 // 青空文庫全体の収録数。手作業で随時更新する（新着文庫の更新とあわせて見直す）。
 // 出典: https://www.aozora.gr.jp/ フッターの「収録作品数」表示。
-const AOZORA_STATS = {確認日:"2026-08-05", 総数:17836, 著作権なし:17348, 著作権あり:488};
+// 確認日時は取得した瞬間のJST（日本時間）。次回更新時は上書きすること。
+const AOZORA_STATS = {確認日時:"2026-08-05T15:01", 総数:17836, 著作権なし:17348, 著作権あり:488};
 
 // [0]公開日 [1]作品名 [2]著者 [3]図書カードURL [4]入力者 [5]校正者
 const NEWS = [
@@ -219,9 +220,11 @@ function render(){
 document.getElementById("more").onclick = () => { shown += 15; render(); };
 
 const s = AOZORA_STATS;
-const d = new Date(s.確認日);
+const d = new Date(s.確認日時 + ":00+09:00");
+const pad = n => String(n).padStart(2,"0");
 document.getElementById("stat").innerHTML =
-  `青空文庫は現在 <b>${s.総数.toLocaleString()}篇</b> を収録（著作権なし${s.著作権なし.toLocaleString()}・著作権あり${s.著作権あり.toLocaleString()}）。${d.getMonth()+1}月${d.getDate()}日時点の確認です。`;
+  `青空文庫は現在 <b>${s.総数.toLocaleString()}篇</b> を収録（著作権なし${s.著作権なし.toLocaleString()}・著作権あり${s.著作権あり.toLocaleString()}）。`
+  + `${d.getMonth()+1}月${d.getDate()}日 ${pad(d.getHours())}:${pad(d.getMinutes())}（日本時間）取得の数字です。`;
 
 render();
 </script>
