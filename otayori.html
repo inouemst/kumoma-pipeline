@@ -68,6 +68,22 @@ p:last-child{margin-bottom:0}
 }
 .subject .clear:hover{color:var(--sumi)}
 
+/* ── 案内文についてかどうかの分岐 ── */
+.branch{
+  margin:0 0 30px;padding:18px 20px;background:#fff;
+  border:1px solid var(--kasumi);border-radius:2px;
+}
+.branch .k{font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.02em}
+.branch .w{font-size:13px;color:var(--ma);line-height:1.9;margin-top:8px;max-width:52ch}
+.branch .choices{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.branch .choice{
+  font-family:var(--sans);font-size:12.5px;color:var(--sumi);
+  text-decoration:none;padding:10px 16px;border:1px solid var(--kasumi);border-radius:2px;
+  background:var(--usu);cursor:pointer;letter-spacing:.02em;
+}
+.branch .choice:hover{border-color:var(--ma)}
+.branch .choice.alt{background:none}
+
 /* ── 歓迎するお便り ── */
 .kinds{margin:0;padding:0;list-style:none}
 .kinds li{padding:16px 0;border-bottom:1px solid var(--usu)}
@@ -138,6 +154,16 @@ footer a{color:var(--aozora);text-decoration:none}
 
 <div id="subject"></div>
 
+<div class="branch" id="branch" hidden>
+  <div class="k">案内文についてのお便りですか？</div>
+  <div class="w">誤りのご指摘など、特定の作品の案内文についてであれば、その作品のページに戻り、案内文の下にある「この案内文について知らせる」から書いてください。対象の作品が自動で伝わります。</div>
+  <div class="choices">
+    <a class="choice" href="index.html">作品を探すページへ戻る</a>
+    <button type="button" class="choice alt" id="notabout">案内文に関わらないお便りです</button>
+  </div>
+</div>
+
+<div id="rest" hidden>
 <section class="blk">
   <h2>とくにありがたいお便り</h2>
   <ul class="kinds">
@@ -158,6 +184,11 @@ footer a{color:var(--aozora);text-decoration:none}
 
 <section class="blk">
   <h2>送る前に</h2>
+
+  <div class="note" id="notabout-note" hidden>
+    耕作員として関わりたい、感想やご提案など、作品の案内文に関わらないお便りは、このまま下から送ってください。
+  </div>
+
   <ul class="pact">
     <li>お名前も連絡先も、書かなくてかまいません。必要以上のことはお尋ねしません。</li>
     <li>すべて読みますが、返信はお約束できません。一人で作っているためです。</li>
@@ -176,6 +207,7 @@ footer a{color:var(--aozora);text-decoration:none}
     雲間は青空文庫の運営とは別の、個人による試みです。
   </div>
 </section>
+</div>
 
 <nav class="pagenav">
   <a href="index.html">探す</a>
@@ -217,6 +249,8 @@ const params = new URLSearchParams(location.search);
 const wid   = (params.get("w") || "").slice(0, 20);
 const title = (params.get("t") || "").slice(0, 120);
 
+const rest = document.getElementById("rest");
+
 if (wid || title) {
   document.getElementById("subject").innerHTML =
     `<div class="subject">
@@ -224,6 +258,15 @@ if (wid || title) {
        <div class="t">${esc(title || "作品ID " + wid)}</div>
        <a class="clear" href="otayori.html">作品を指定せずに書く</a>
      </div>`;
+  rest.hidden = false;
+} else {
+  document.getElementById("branch").hidden = false;
+  document.getElementById("notabout").addEventListener("click", () => {
+    document.getElementById("branch").hidden = true;
+    document.getElementById("notabout-note").hidden = false;
+    rest.hidden = false;
+    rest.scrollIntoView({behavior:"smooth", block:"start"});
+  });
 }
 
 const send = document.getElementById("send");
