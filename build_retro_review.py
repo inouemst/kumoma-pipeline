@@ -29,8 +29,15 @@ def stage_of(rate):
         return 3
     return 0  # 対象外(良好域)
 
+def load_corrections():
+    try:
+        return json.load(open("stage1_corrections.json", encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+
 def main():
     authors = load_authors()
+    corrections = load_corrections()
     batch_nums = []
     for f in sorted(glob.glob("batch*_meta.json")):
         m = re.search(r"batch(\d+)_meta\.json", f)
@@ -56,6 +63,7 @@ def main():
             labels = v.get("ラベル", {}) or {}
             forms = labels.get("形式") or []
             is_narrative = bool(set(forms) & NARRATIVE_FORMS)
+            corr = corrections.get(wid)
             items.append({
                 "batch": n,
                 "id": wid,
@@ -70,6 +78,7 @@ def main():
                 "guide": v.get("案内文"),
                 "no_guide_reason": v.get("案内文なし理由"),
                 "fulltext": full.get(wid, ""),
+                "correction": corr,
             })
 
     total = len(items)
@@ -87,32 +96,53 @@ def main():
     # 対象外（露出率40%未満・非物語系）まで含めると、数十万字級の長編が
     # 混在してファイルが肥大化する（実測: 全件埋め込みで135MB→GitHubの
     # 単一ファイル上限100MBを超えてpush不可）。対象外は案内文とメタ情報のみ表示。
+    n_corrected = 0
+    n_kept = 0
     rows = []
     for it in items:
         guide = it["guide"]
-        guide_html = esc(guide) if guide else f'<span class="none">（案内文なし: {esc(it["no_guide_reason"])}）</span>'
+        old_guide_html = esc(guide) if guide else f'<span class="none">（案内文なし: {esc(it["no_guide_reason"])}）</span>'
         stage_badge = ""
         needs_fulltext = it["narrative"] and it["stage"] in (1, 2, 3)
         if needs_fulltext:
             stage_badge = f'<span class="stage stage{it["stage"]}">第{it["stage"]}段階</span>'
         narr_badge = '<span class="narr">物語系</span>' if it["narrative"] else '<span class="nonnarr">非物語系</span>'
+
+        corr = it["correction"]
+        corr_badge = ""
+        guide_block = f'<div class="guide">{old_guide_html}</div>'
+        if corr:
+            verdict = corr.get("判定", "")
+            tier = corr.get("型", "")
+            new_text = corr.get("案内文", "")
+            if verdict == "修正":
+                n_corrected += 1
+                corr_badge = '<span class="corrfix">修正案あり</span>'
+                guide_block = f'''<div class="guide old"><span class="lbl">旧</span>{esc(guide)}</div>
+  <div class="guide new"><span class="lbl">新{esc(tier)}</span>{esc(new_text)}</div>'''
+            elif verdict == "変更不要":
+                n_kept += 1
+                corr_badge = '<span class="corrkeep">変更不要と判定</span>'
+                guide_block = f'<div class="guide"><span class="lbl">維持</span>{esc(new_text)}</div>'
+
         if needs_fulltext:
             toggle_html = f'''<button class="toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.textContent==='本文を見る▾'?'本文を閉じる▴':'本文を見る▾'">本文を見る▾</button>
   <div class="fulltext">{esc(it['fulltext'])}</div>'''
         else:
             toggle_html = '<div class="notarget">対象外のため本文は非表示（露出率40%未満、または非物語系）</div>'
         rows.append(f"""
-<article class="item" data-rate="{it['rate']:.4f}" data-stage="{it['stage']}" data-narrative="{'1' if it['narrative'] else '0'}" data-batch="{it['batch']}">
+<article class="item" data-rate="{it['rate']:.4f}" data-stage="{it['stage']}" data-narrative="{'1' if it['narrative'] else '0'}" data-batch="{it['batch']}" data-hascorr="{'1' if corr else '0'}">
   <div class="head">
     <span class="bid">batch{it['batch']} / {esc(it['id'])}</span>
     <span class="ttl">{esc(it['title'])}</span>
     <span class="author">{esc(it['author'])}</span>
     {narr_badge}
     {stage_badge}
+    {corr_badge}
     <span class="rate">露出率 {it['rate']*100:.0f}%</span>
     <span class="chars">{it['chars']:,}字中{it['exposed_chars']:,}字</span>
   </div>
-  <div class="guide">{guide_html}</div>
+  {guide_block}
   {toggle_html}
 </article>""")
 
@@ -152,8 +182,14 @@ h1{{font-size:16px;margin:0 0 6px}}
 .stage1{{background:var(--s1)}}
 .stage2{{background:var(--s2)}}
 .stage3{{background:var(--s3)}}
-.guide{{font-family:var(--serif);font-size:15px;line-height:1.9;padding:10px 12px;background:var(--usu);border-radius:2px;margin-bottom:8px}}
+.guide{{font-family:var(--serif);font-size:15px;line-height:1.9;padding:10px 12px;background:var(--usu);border-radius:2px;margin-bottom:8px;position:relative}}
 .guide .none{{color:var(--ma);font-family:var(--sans);font-size:13px}}
+.guide .lbl{{display:inline-block;font-family:var(--sans);font-size:10px;color:var(--ma);background:#fff;border:1px solid var(--kasumi);border-radius:2px;padding:1px 6px;margin-right:8px;vertical-align:middle}}
+.guide.old{{opacity:.6;text-decoration:line-through;text-decoration-color:var(--s1);text-decoration-thickness:1.5px}}
+.guide.old .lbl{{text-decoration:none}}
+.guide.new{{border-left:3px solid var(--narr)}}
+.corrfix{{background:var(--s1);color:#fff;font-size:10px;padding:1px 6px;border-radius:2px}}
+.corrkeep{{background:var(--usu);color:var(--ma);font-size:10px;padding:1px 6px;border-radius:2px}}
 .toggle{{font-size:11.5px;color:var(--ma);background:none;border:1px solid var(--kasumi);border-radius:2px;padding:4px 10px;cursor:pointer;font-family:var(--sans)}}
 .fulltext{{display:none;margin-top:10px;padding:12px 14px;background:#FAFBFC;border:1px dashed var(--kasumi);border-radius:2px;white-space:pre-wrap;font-size:13px;line-height:1.9;max-height:420px;overflow-y:auto}}
 .fulltext.open{{display:block}}
@@ -171,6 +207,8 @@ h1{{font-size:16px;margin:0 0 6px}}
     <tr><td>第2段階（露出率60〜90%）</td><td class="n">{stage_counts[2]}件</td></tr>
     <tr><td>第3段階（露出率40〜60%）</td><td class="n">{stage_counts[3]}件</td></tr>
     <tr><td>対象外（露出率40%未満・実地確認で良好域）</td><td class="n">{len(narrative_items)-sum(stage_counts.values())}件</td></tr>
+    <tr><td>修正案あり（エージェント判定：修正）</td><td class="n">{n_corrected}件</td></tr>
+    <tr><td>変更不要と判定</td><td class="n">{n_kept}件</td></tr>
   </table>
 </div>
 <div class="controls">
@@ -179,6 +217,7 @@ h1{{font-size:16px;margin:0 0 6px}}
   <button onclick="filterStage(2)" id="btn-2">第2段階のみ（{stage_counts[2]}件）</button>
   <button onclick="filterStage(3)" id="btn-3">第3段階のみ（{stage_counts[3]}件）</button>
   <button onclick="filterNarrOnly()" id="btn-narr">物語系のみ</button>
+  <button onclick="filterCorrOnly()" id="btn-corr">修正案ありのみ（{n_corrected}件）</button>
 </div>
 <div id="list">
 {''.join(rows)}
@@ -186,14 +225,17 @@ h1{{font-size:16px;margin:0 0 6px}}
 </div>
 <script>
 let narrOnly = false;
+let corrOnly = false;
 let curStage = 0;
 function apply(){{
   document.querySelectorAll('.item').forEach(el=>{{
     const stage = +el.dataset.stage;
     const narr = el.dataset.narrative === '1';
+    const hascorr = el.dataset.hascorr === '1';
     let show = true;
     if(curStage !== 0) show = show && (narr && stage === curStage);
     if(narrOnly) show = show && narr;
+    if(corrOnly) show = show && hascorr;
     el.classList.toggle('dim', !show);
   }});
 }}
@@ -205,6 +247,11 @@ function filterStage(n){{
 function filterNarrOnly(){{
   narrOnly = !narrOnly;
   document.getElementById('btn-narr').classList.toggle('active', narrOnly);
+  apply();
+}}
+function filterCorrOnly(){{
+  corrOnly = !corrOnly;
+  document.getElementById('btn-corr').classList.toggle('active', corrOnly);
   apply();
 }}
 </script>
