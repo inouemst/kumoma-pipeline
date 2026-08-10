@@ -30,10 +30,13 @@ def stage_of(rate):
     return 0  # 対象外(良好域)
 
 def load_corrections():
-    try:
-        return json.load(open("stage1_corrections.json", encoding="utf-8"))
-    except FileNotFoundError:
-        return {}
+    merged = {}
+    for fn in ("stage1_corrections.json", "stage2_corrections.json", "stage3_corrections.json"):
+        try:
+            merged.update(json.load(open(fn, encoding="utf-8")))
+        except FileNotFoundError:
+            continue
+    return merged
 
 def main():
     authors = load_authors()
