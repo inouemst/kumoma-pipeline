@@ -74,4 +74,4 @@ print(json.dumps(r_ending, ensure_ascii=False, indent=1))
 print("\n--- 97件到達確認 ---")
 next_ids = json.load(open("next_batch_ids.json", encoding="utf-8"))
 missing = [i for i in next_ids if i not in data]
-print("next_batch_idsのうちproduction_batch18.jsonに存在しないもの:", missing)
+print("next_batch_idsのうちproduction_batch19.jsonに存在しないもの:", missing)
