@@ -130,10 +130,15 @@ footer a{color:var(--aozora);text-decoration:none}
 // 青空文庫全体の収録数。手作業で随時更新する（新着文庫の更新とあわせて見直す）。
 // 出典: https://www.aozora.gr.jp/ フッターの「収録作品数」表示。
 // 確認日時は取得した瞬間のJST（日本時間）。次回更新時は上書きすること。
-const AOZORA_STATS = {確認日時:"2026-08-05T15:01", 総数:17836, 著作権なし:17348, 著作権あり:488};
+const AOZORA_STATS = {確認日時:"2026-08-20T06:42", 総数:17840, 著作権なし:17352, 著作権あり:488};
 
 // [0]公開日 [1]作品名 [2]著者 [3]図書カードURL [4]入力者 [5]校正者
 const NEWS = [
+["2026-08-20","ホノルル","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61517.html","砂場清隆","木下聡"],
+["2026-08-16","和蘭人形","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card58555.html","特定非営利活動法人はるかぜ","noriko saito"],
+["2026-08-12","化物屋敷","佐藤 春夫","https://www.aozora.gr.jp/cards/001763/card61545.html","持田和踏","noriko saito"],
+["2026-08-08","働く婦人","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61483.html","砂場清隆","木下聡"],
+["2026-08-04","横浜伊勢佐木町","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60117.html","特定非営利活動法人はるかぜ","noriko saito"],
 ["2026-07-31","私生児のこと","柳田 国男","https://www.aozora.gr.jp/cards/001566/card58760.html","フクポー","植松健伍"],
 ["2026-07-28","畸形の天女","江戸川 乱歩","https://www.aozora.gr.jp/cards/001779/card58487.html","入江幹夫","山田順子"],
 ["2026-07-25","ソ連関係の記事","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61510.html","砂場清隆","木下聡"],
@@ -178,12 +183,7 @@ const NEWS = [
 ["2026-03-01","街の尼僧の話","岡本 かの子","https://www.aozora.gr.jp/cards/000076/card58353.html","門田裕志","いとうおちゃ"],
 ["2026-02-25","カナリヤと少女","山川 方夫","https://www.aozora.gr.jp/cards/001801/card59863.html","かな　とよみ","toko"],
 ["2026-02-23","酒も食べ物も","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60106.html","特定非営利活動法人はるかぜ","noriko saito"],
-["2026-02-20","歌舞伎舞踊","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61439.html","砂場清隆","木下聡"],
-["2026-02-18","ミス・マシュウの新職業","岡本 かの子","https://www.aozora.gr.jp/cards/000076/card58340.html","門田裕志","いとうおちゃ"],
-["2026-02-14","歔欷く仁王像","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card58557.html","特定非営利活動法人はるかぜ","noriko saito"],
-["2026-02-10","変ったホテル","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61440.html","砂場清隆","木下聡"],
-["2026-02-07","ブドー酒・哲学・アイスクリーム","山本 周五郎","https://www.aozora.gr.jp/cards/001869/card60122.html","特定非営利活動法人はるかぜ","noriko saito"],
-["2026-02-04","百万長者の花屋","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61484.html","砂場清隆","木下聡"]
+["2026-02-20","歌舞伎舞踊","中谷 宇吉郎","https://www.aozora.gr.jp/cards/001569/card61439.html","砂場清隆","木下聡"]
 ];
 
 const esc = s => (s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
